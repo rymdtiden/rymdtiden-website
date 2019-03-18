@@ -1,0 +1,15 @@
+{
+  "name": "rymdtiden-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs --compress --mangle --output bundle.js -- main.js"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "uglify-js": "3.4.10"
+  }
+}
