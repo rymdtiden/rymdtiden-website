@@ -1,0 +1,157 @@
+html,
+body,
+p,
+ul,
+li,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* header */
+
+header {
+  padding: 32px;
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 128px 64px;
+  }
+}
+
+header > h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 1024px) {
+  header > h1 {
+    font-size: 24px;
+    margin-bottom: 64px;
+  }
+}
+
+header > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  header > p {
+    font-size: 48px;
+    max-width: 960px;
+  }
+}
+
+/* canvas */
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+/* section 1 */
+
+section {
+  padding: 32px;
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    padding: 64px;
+  }
+}
+
+section > h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+  section > h2 {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+section > ul {
+  list-style: none;
+  padding: 0;
+}
+
+section > ul > li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  section > ul > li {
+    font-size: 20px;
+  }
+}
+
+/* footer */
+
+footer {
+  padding: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    padding: 64px;
+  }
+}
+
+footer > a {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (min-width: 1024px) {
+  footer > a {
+    font-size: 24px;
+  }
+}
+
+footer > address {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-style: normal;
+}
+
+footer > address > p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  footer > address > p {
+    font-size: 20px;
+  }
+}
+
+footer > address > a {
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  color: black;
+}

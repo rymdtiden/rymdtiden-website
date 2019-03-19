@@ -10,12 +10,9 @@
   var HALF_HEIGHT = HEIGHT / 2;
   var HALF_DEPTH = DEPTH / 2;
 
-  var canvas = document.createElement("canvas");
+  var canvas = document.querySelector("canvas");
   var context = canvas.getContext("2d");
   var stars = [];
-
-  // add canvas to target element
-  document.getElementById("animation").appendChild(canvas);
 
   // create stars data
   for (var i = 0; i < STARS; i++) {
@@ -33,11 +30,7 @@
   canvas.width = WIDTH;
   canvas.height = HEIGHT;
 
-  // set canvas style
-  canvas.style.cssText =
-    "display: block; width: 100%; height: auto; background-color: black;";
-
-  var render = function() {
+  setInterval(function() {
     // clear canvas of stars
     context.fillStyle = "rgb(0,0,0)";
     context.clearRect(0, 0, WIDTH, HEIGHT);
@@ -70,10 +63,5 @@
       context.lineTo(x2d + scale, y2d);
       context.stroke();
     }
-  };
-
-  // start animation
-  setInterval(function() {
-    render();
   }, 50);
 })();
