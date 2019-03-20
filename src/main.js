@@ -1,16 +1,17 @@
 (function() {
+  var canvas = document.querySelector("canvas");
+
   var FOV = 250;
   var DEPTH = 400;
-  var WIDTH = 1440;
-  var HEIGHT = 900;
+  var WIDTH = canvas.offsetWidth;
+  var HEIGHT = canvas.offsetHeight;
   var STARS = 1000;
-  var SPEED = 1;
+  var SPEED = 0.3;
 
   var HALF_WIDTH = WIDTH / 2;
   var HALF_HEIGHT = HEIGHT / 2;
   var HALF_DEPTH = DEPTH / 2;
 
-  var canvas = document.querySelector("canvas");
   var context = canvas.getContext("2d");
   var stars = [];
 
@@ -26,11 +27,19 @@
   // disable canvas smoothing
   context.imageSmoothingEnabled = false;
 
-  // set canvas size
-  canvas.width = WIDTH;
-  canvas.height = HEIGHT;
+  var render = function() {
+    requestAnimationFrame(render);
 
-  setInterval(function() {
+    WIDTH = canvas.offsetWidth;
+    HEIGHT = canvas.offsetHeight;
+
+    HALF_WIDTH = WIDTH / 2;
+    HALF_HEIGHT = HEIGHT / 2;
+
+    // set canvas size
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+
     // clear canvas of stars
     context.fillStyle = "rgb(0,0,0)";
     context.clearRect(0, 0, WIDTH, HEIGHT);
@@ -63,5 +72,7 @@
       context.lineTo(x2d + scale, y2d);
       context.stroke();
     }
-  }, 50);
+  };
+
+  render();
 })();

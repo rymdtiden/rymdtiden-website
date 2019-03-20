@@ -21,7 +21,9 @@ html {
 /* header */
 
 header {
-  padding: 32px;
+  position: relative;
+  padding: 64px 32px;
+  color: white;
 }
 
 @media screen and (min-width: 480px) {
@@ -44,13 +46,15 @@ header > h1 {
 }
 
 header > p {
-  font-size: 20px;
+  font-size: 32px;
+  line-height: 42px;
   font-weight: bold;
 }
 
 @media screen and (min-width: 480px) {
   header > p {
     font-size: 48px;
+    line-height: 56px;
     max-width: 960px;
   }
 }
@@ -58,34 +62,27 @@ header > p {
 /* canvas */
 
 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: black;
+
+  z-index: -1;
 }
 
 /* section 1 */
 
 section {
-  padding: 32px;
+  padding: 48px 32px;
 }
 
 @media screen and (min-width: 480px) {
   section {
-    padding: 64px;
-  }
-}
-
-section > h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-@media screen and (min-width: 480px) {
-  section > h2 {
-    font-size: 24px;
-    margin-bottom: 32px;
+    padding: 96px 64px;
   }
 }
 
@@ -95,13 +92,36 @@ section > ul {
 }
 
 section > ul > li {
+  display: inline-flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 0 8px;
+  margin: 0 0 24px 0;
   font-size: 16px;
-  margin-bottom: 8px;
+  line-height: 20px;
+  text-align: center;
 }
 
 @media screen and (min-width: 480px) {
   section > ul > li {
     font-size: 20px;
+    line-height: 24px;
+    width: 33%;
+    padding: 0 16px;
+    margin-bottom: 32px;
+  }
+}
+
+section > ul > li > svg {
+  display: inline-block;
+  width: 50%;
+  max-width: 150px;
+  margin: 0 auto 8px auto;
+}
+
+@media screen and (min-width: 480px) {
+  section > ul > li > svg {
+    margin: 0 auto 24px auto;
   }
 }
 
@@ -116,6 +136,36 @@ footer {
   footer {
     padding: 64px;
   }
+}
+
+footer > address {
+  display: flex;
+  align-items: center;
+}
+
+footer > address > figure {
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  background-color: black;
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  footer > address > figure {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+footer > address > figure > svg {
+  width: 60%;
+  height: 60%;
+  fill: white;
 }
 
 footer > a {
@@ -137,21 +187,37 @@ footer > address {
   font-style: normal;
 }
 
-footer > address > p {
+footer > address > div > p {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 @media screen and (min-width: 480px) {
-  footer > address > p {
+  footer > address > div > p {
     font-size: 20px;
   }
 }
 
-footer > address > a {
+footer > address > div > a {
   font-size: 16px;
   line-height: 24px;
   text-decoration: none;
+  color: black;
+}
+
+small {
+  display: block;
+  padding: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 480px) {
+  small {
+    padding: 32px 64px;
+  }
+}
+
+small > a {
   color: black;
 }
