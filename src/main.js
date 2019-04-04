@@ -1,5 +1,5 @@
 (function() {
-  var canvas = document.querySelector("canvas");
+  var canvas = document.getElementById("animation");
 
   var FOV = 250;
   var DEPTH = 400;

@@ -1,67 +1,156 @@
 html,
 body,
 p,
+ol,
 ul,
 li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
 html {
-  font-family: sans-serif;
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+img,
+embed,
+iframe,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+}
+audio {
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/* utilities */
+
+.hidden {
+  display: none;
+}
+
+/* container */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* button */
+
+.button {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+@media screen and (min-width: 480px) {
+  .button {
+    font-size: 20px;
+  }
+}
 
 /* header */
 
-header {
+.header {
   position: relative;
   padding: 64px 32px;
   color: white;
 }
 
 @media screen and (min-width: 480px) {
-  header {
+  .header {
     padding: 128px 64px;
   }
 }
 
-header > h1 {
+.header__logo {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 32px;
 }
 
 @media screen and (min-width: 480px) {
-  header > h1 {
+  .header__logo {
     font-size: 24px;
     margin-bottom: 64px;
   }
 }
 
-header > p {
+.header__text {
   font-size: 32px;
   line-height: 42px;
   font-weight: bold;
 }
 
 @media screen and (min-width: 480px) {
-  header > p {
+  .header__text {
     font-size: 48px;
     line-height: 56px;
     max-width: 960px;
   }
 }
 
-/* canvas */
-
-canvas {
+.header__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,150 +163,232 @@ canvas {
   z-index: -1;
 }
 
-/* section 1 */
+/* contact */
 
-section {
-  padding: 48px 32px;
-}
-
-@media screen and (min-width: 480px) {
-  section {
-    padding: 96px 64px;
-  }
-}
-
-section > ul {
-  list-style: none;
-  padding: 0;
-}
-
-section > ul > li {
-  display: inline-flex;
-  flex-direction: column;
-  width: 50%;
-  padding: 0 8px;
-  margin: 0 0 24px 0;
-  font-size: 16px;
-  line-height: 20px;
+.contact {
+  padding: 32px;
   text-align: center;
 }
 
 @media screen and (min-width: 480px) {
-  section > ul > li {
-    font-size: 20px;
-    line-height: 24px;
+  .contact {
+    padding: 48px;
+  }
+}
+
+.contact__button {
+  display: inline-block;
+  margin: 0 8px 16px 8px;
+}
+
+@media screen and (min-width: 480px) {
+  .contact__button {
+    margin-bottom: 0px;
+  }
+}
+
+/* services */
+
+.services {
+  padding: 48px 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 480px) {
+  .services {
+    padding: 96px 64px 64px 64px;
+  }
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  max-width: 1440px;
+}
+
+.services__item {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 0 32px 0;
+}
+
+@media screen and (min-width: 640px) {
+  .services__item {
+    width: 50%;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .services__item {
     width: 33%;
+    padding: 0 64px;
+  }
+}
+
+/* service-card */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+  text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+  .service-card {
     padding: 0 16px;
     margin-bottom: 32px;
   }
 }
 
-section > ul > li > svg {
+.service-card__icon {
   display: inline-block;
   width: 50%;
   max-width: 150px;
-  margin: 0 auto 8px auto;
+  margin: 0 auto 16px auto;
 }
 
 @media screen and (min-width: 480px) {
-  section > ul > li > svg {
+  .service-card__icon {
     margin: 0 auto 24px auto;
   }
 }
 
-/* footer */
+.service-card__heading {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
 
-footer {
+@media screen and (min-width: 480px) {
+  .service-card__heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.service-card__text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* people */
+
+.people {
   padding: 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 480px) {
-  footer {
+  .people {
     padding: 64px;
   }
 }
 
-footer > address {
+.people__list {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-footer > address > figure {
+@media screen and (min-width: 768px) {
+  .people__list {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+.people__item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .people__item {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+/* profile-card */
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+.profile-card__image {
   display: inline-flex;
   width: 80px;
   height: 80px;
   margin: 0;
   justify-content: center;
   align-items: center;
-  margin-right: 16px;
+  margin-right: 24px;
   background-color: black;
   border-radius: 100%;
 }
 
 @media screen and (min-width: 480px) {
-  footer > address > figure {
+  .profile-card__image {
     width: 100px;
     height: 100px;
   }
 }
 
-footer > address > figure > svg {
+.profile-card__icon {
   width: 60%;
   height: 60%;
   fill: white;
 }
 
-footer > a {
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-}
-
-@media screen and (min-width: 480px) {
-  footer > a {
-    font-size: 24px;
-  }
-}
-
-footer > address {
-  margin-top: 32px;
-  margin-bottom: 32px;
-  font-style: normal;
-}
-
-footer > address > div > p {
+.profile-card__name {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 @media screen and (min-width: 480px) {
-  footer > address > div > p {
+  .profile-card__name {
     font-size: 20px;
   }
 }
 
-footer > address > div > a {
-  font-size: 16px;
-  line-height: 24px;
+.profile-card__link {
+  font-size: 14px;
+  line-height: 20px;
   text-decoration: none;
   color: black;
 }
 
-small {
+@media screen and (min-width: 480px) {
+  .profile-card__link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* credits */
+
+.credits {
   display: block;
   padding: 32px;
+  text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 480px) {
-  small {
+  .credits {
     padding: 32px 64px;
   }
 }
 
-small > a {
+.credits__link {
   color: black;
 }
