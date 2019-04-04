@@ -210,7 +210,7 @@ th {
 .services__item {
   width: 100%;
   padding: 0 16px;
-  margin: 0 0 32px 0;
+  margin: 0 0 64px 0;
 }
 
 @media screen and (min-width: 640px) {
@@ -232,15 +232,7 @@ th {
 .service-card {
   display: flex;
   flex-direction: column;
-  padding: 0 8px;
   text-align: center;
-}
-
-@media screen and (min-width: 480px) {
-  .service-card {
-    padding: 0 16px;
-    margin-bottom: 32px;
-  }
 }
 
 .service-card__icon {
