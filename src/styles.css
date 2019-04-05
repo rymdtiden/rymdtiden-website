@@ -77,6 +77,13 @@ th {
   text-align: left;
 }
 
+/* generic */
+
+html,
+body {
+  height: 100%;
+}
+
 /* utilities */
 
 .hidden {
@@ -86,7 +93,10 @@ th {
 /* container */
 
 .container {
+  position: relative;
+  width: 100%;
   max-width: 1440px;
+  height: inherit;
   margin: 0 auto;
 }
 
@@ -94,63 +104,102 @@ th {
 
 .button {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 16px 40px;
   border-radius: 32px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
+  letter-spacing: 0.5px;
   color: white;
   background-color: black;
 }
 
 @media screen and (min-width: 480px) {
   .button {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-/* header */
+/* hero */
 
-.header {
+.hero {
   position: relative;
-  padding: 64px 32px;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 0 32px;
   color: white;
 }
 
 @media screen and (min-width: 480px) {
-  .header {
-    padding: 128px 64px;
+  .hero {
+    padding: 0 64px;
   }
 }
 
-.header__logo {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 32px;
+.hero__content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px 0;
 }
 
 @media screen and (min-width: 480px) {
-  .header__logo {
-    font-size: 24px;
-    margin-bottom: 64px;
+  .hero__content {
+    padding: 64px 0;
   }
 }
 
-.header__text {
+.hero__logo {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__logo {
+    font-size: 24px;
+  }
+}
+
+.hero__text {
   font-size: 32px;
   line-height: 42px;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 @media screen and (min-width: 480px) {
-  .header__text {
-    font-size: 48px;
-    line-height: 56px;
-    max-width: 960px;
+  .hero__text {
+    font-size: 56px;
+    line-height: 64px;
+    max-width: 1080px;
   }
 }
 
-.header__background {
+.hero__arrow {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transform: rotate(90deg);
+}
+
+@media screen and (min-width: 480px) {
+  .hero__arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.hero__background {
   position: absolute;
   top: 0;
   left: 0;
