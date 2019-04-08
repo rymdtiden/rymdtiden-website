@@ -243,24 +243,53 @@ body {
 /* contact */
 
 .contact {
-  padding: 32px;
+  padding: 48px;
   text-align: center;
 }
 
 @media screen and (min-width: 480px) {
   .contact {
-    padding: 48px;
+    padding: 64px;
+  }
+}
+
+.contact__text {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 480px) {
+  .contact__text {
+    font-size: 36px;
+    letter-spacing: 1px;
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+}
+
+.contact__buttons {
+  display: block;
+}
+
+@media screen and (min-width: 480px) {
+  .contact__buttons {
+    display: inline-flex;
+    flex-direction: row;
   }
 }
 
 .contact__button {
-  display: inline-block;
-  margin: 0 8px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 480px) {
   .contact__button {
-    margin-bottom: 0px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0px 8px;
   }
 }
 
