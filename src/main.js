@@ -6,7 +6,8 @@
   var WIDTH = canvas.offsetWidth;
   var HEIGHT = canvas.offsetHeight;
   var STARS = 1000;
-  var SPEED = 0.3;
+  var SPEED = 0.25;
+  var MAX_SPEED = 2;
 
   var HALF_WIDTH = WIDTH / 2;
   var HALF_HEIGHT = HEIGHT / 2;
@@ -51,7 +52,8 @@
       (speedOffset - animationSpeedOffset) * speedOffsetExpo;
 
     // render space
-    context.fillStyle = "rgba(0,0,0,1)";
+    var fillStyleOpacity = 1 - (animationSpeedOffset / MAX_SPEED) * 0.9;
+    context.fillStyle = "rgba(0,0,0," + fillStyleOpacity + ")";
     context.fillRect(0, 0, WIDTH, HEIGHT);
 
     // render each star
@@ -64,9 +66,15 @@
       z -= SPEED + animationSpeedOffset;
 
       // reset star if it passes the fov
-      if (z < -FOV) z += DEPTH;
+      if (z < -FOV) {
+        x = Math.random() * WIDTH - HALF_WIDTH;
+        y = Math.random() * HEIGHT - HALF_HEIGHT;
+        z += DEPTH;
+      }
 
       // update star z
+      stars[i].x = x;
+      stars[i].y = y;
       stars[i].z = z;
 
       // calculate position and scale
@@ -120,12 +128,12 @@
   });
 
   canvas.parentElement.addEventListener("mousedown", function() {
-    speedOffsetExpo = 0.001;
-    speedOffset = 20;
+    speedOffsetExpo = 0.01;
+    speedOffset = MAX_SPEED;
   });
 
   canvas.parentElement.addEventListener("mouseup", function() {
-    speedOffsetExpo = 0.1;
+    speedOffsetExpo = 0.01;
     speedOffset = 0;
   });
 
