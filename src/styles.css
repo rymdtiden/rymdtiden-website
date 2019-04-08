@@ -190,12 +190,40 @@ body {
   height: 24px;
   fill: white;
   transform: rotate(90deg);
+  animation: hero__arrow 2s infinite;
 }
 
 @media screen and (min-width: 480px) {
   .hero__arrow {
     width: 32px;
     height: 32px;
+  }
+}
+
+@keyframes hero__arrow {
+  0% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
+  }
+
+  75% {
+    transform: rotate(90deg) translate(10px, 0px);
+    opacity: 0;
+  }
+
+  76% {
+    transform: rotate(90deg) translate(-10px, 0px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
   }
 }
 
