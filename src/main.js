@@ -39,9 +39,6 @@
   var render = function() {
     requestAnimationFrame(render);
 
-    WIDTH = canvas.offsetWidth;
-    HEIGHT = canvas.offsetHeight;
-
     HALF_WIDTH = WIDTH / 2;
     HALF_HEIGHT = HEIGHT / 2;
 
@@ -87,8 +84,8 @@
   };
 
   var resize = function() {
-    canvas.width = WIDTH;
-    canvas.height = HEIGHT;
+    canvas.width = WIDTH = canvas.offsetWidth;
+    canvas.height = HEIGHT = canvas.offsetHeight;
   };
 
   var moveSpace = function(x, y) {
