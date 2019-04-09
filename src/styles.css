@@ -77,6 +77,13 @@ th {
   text-align: left;
 }
 
+/* generic */
+
+html,
+body {
+  height: 100%;
+}
+
 /* utilities */
 
 .hidden {
@@ -86,7 +93,10 @@ th {
 /* container */
 
 .container {
+  position: relative;
+  width: 100%;
   max-width: 1440px;
+  height: inherit;
   margin: 0 auto;
 }
 
@@ -94,63 +104,130 @@ th {
 
 .button {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 16px 40px;
   border-radius: 32px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
+  letter-spacing: 0.5px;
   color: white;
   background-color: black;
 }
 
 @media screen and (min-width: 480px) {
   .button {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
-/* header */
+/* hero */
 
-.header {
+.hero {
   position: relative;
-  padding: 64px 32px;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 0 32px;
   color: white;
 }
 
 @media screen and (min-width: 480px) {
-  .header {
-    padding: 128px 64px;
+  .hero {
+    padding: 0 64px;
   }
 }
 
-.header__logo {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 32px;
+.hero__content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px 0;
 }
 
 @media screen and (min-width: 480px) {
-  .header__logo {
-    font-size: 24px;
-    margin-bottom: 64px;
+  .hero__content {
+    padding: 64px 0;
   }
 }
 
-.header__text {
+.hero__logo {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__logo {
+    font-size: 24px;
+  }
+}
+
+.hero__text {
   font-size: 32px;
   line-height: 42px;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 @media screen and (min-width: 480px) {
-  .header__text {
-    font-size: 48px;
-    line-height: 56px;
-    max-width: 960px;
+  .hero__text {
+    font-size: 56px;
+    line-height: 64px;
+    max-width: 1080px;
   }
 }
 
-.header__background {
+.hero__arrow {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transform: rotate(90deg);
+  animation: hero__arrow 2s infinite;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__arrow {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@keyframes hero__arrow {
+  0% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
+  }
+
+  75% {
+    transform: rotate(90deg) translate(10px, 0px);
+    opacity: 0;
+  }
+
+  76% {
+    transform: rotate(90deg) translate(-10px, 0px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(90deg) translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+.hero__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -166,24 +243,53 @@ th {
 /* contact */
 
 .contact {
-  padding: 32px;
+  padding: 48px;
   text-align: center;
 }
 
 @media screen and (min-width: 480px) {
   .contact {
-    padding: 48px;
+    padding: 64px;
+  }
+}
+
+.contact__text {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 480px) {
+  .contact__text {
+    font-size: 36px;
+    letter-spacing: 1px;
+    max-width: 680px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+}
+
+.contact__buttons {
+  display: block;
+}
+
+@media screen and (min-width: 480px) {
+  .contact__buttons {
+    display: inline-flex;
+    flex-direction: row;
   }
 }
 
 .contact__button {
-  display: inline-block;
-  margin: 0 8px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 480px) {
   .contact__button {
-    margin-bottom: 0px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0px 8px;
   }
 }
 
@@ -210,7 +316,7 @@ th {
 .services__item {
   width: 100%;
   padding: 0 16px;
-  margin: 0 0 32px 0;
+  margin: 0 0 64px 0;
 }
 
 @media screen and (min-width: 640px) {
@@ -232,15 +338,7 @@ th {
 .service-card {
   display: flex;
   flex-direction: column;
-  padding: 0 8px;
   text-align: center;
-}
-
-@media screen and (min-width: 480px) {
-  .service-card {
-    padding: 0 16px;
-    margin-bottom: 32px;
-  }
 }
 
 .service-card__icon {
