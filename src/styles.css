@@ -402,11 +402,11 @@ body {
   flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .people__list {
     flex-direction: row;
     justify-content: center;
-    max-width: 768px;
+    max-width: 1024px;
     margin: 0 auto;
   }
 }
@@ -421,9 +421,9 @@ body {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .people__item {
-    width: 50%;
+    width: 33.333%;
     margin-bottom: 0;
   }
 }
